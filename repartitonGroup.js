@@ -10,20 +10,38 @@ function shuffle(a) {
 }
 
 function assign() {
-    let people=parseInt(prompt('Entrez le nombre de participant'))
-    let name = prompt("Entrez un nom")
+    var people=parseInt(prompt('Entrez le nombre de participant'))
+    if(people == null){
+        return
+    }
+    let name = prompt("Entrer un nom")
+    if(name == null){
+        return
+    }
+   
     list.push(name)
     while(list.length !== people){
-        let name= prompt("Entrez un nom")
+        let name= prompt("Entrer un nom")
+        if(name == null){
+            return
+        }
+        
         list.push(name)
         
     }
 shuffle(list)
-var nbrgrp=parseInt(prompt("entrez le nombre de groupe"));
+var nbrgrp=parseInt(prompt("Entrer le nombre de groupe"));
+if(nbrgrp == null){
+    return
+}
+while(nbrgrp > people){
+    alert('le nombre de groupe est plus grand que le nombre de participant')
+    nbrgrp=parseInt(prompt("Entrer le nombre de groupe"))
+}
 var group= Math.floor(list.length/nbrgrp)
 for(i=0; i < nbrgrp; i++){
 let tab=list.slice(count,group)
 list.splice(count, group)
-document.getElementsByTagName("p")[0].innerHTML = `${document.getElementsByTagName("p")[0].innerHTML}group${i} : ${tab} <br>`
+document.getElementsByTagName("p")[0].innerHTML = `${document.getElementsByTagName("p")[0].innerHTML}groupe${i} : ${tab} <br>`
 }
 }

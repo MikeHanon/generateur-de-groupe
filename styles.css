@@ -1,6 +1,10 @@
-body, header, section, h1,p{
+body, header, h1,p{
     margin: 0;
     padding: 0;
     background-color: #3E403F !important;
     color: white !important;
+}
+section{
+    width:50%;
+    margin: auto;
 }
