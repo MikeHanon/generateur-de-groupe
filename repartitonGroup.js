@@ -20,17 +20,10 @@ function assign() {
     }
 shuffle(list)
 var nbrgrp=parseInt(prompt("entrez le nombre de groupe"));
-// for(i=0; i < nbrgrp; i++){
-//     document.getElementById('allgroup').innerHTML = `<p id=group${i}><p>\n`
-//     console.log(i, 2)
-   
-// }
 var group= Math.floor(list.length/nbrgrp)
-for(i=0; i <= nbrgrp; i++){
+for(i=0; i < nbrgrp; i++){
 let tab=list.slice(count,group)
 list.splice(count, group)
 document.getElementsByTagName("p")[0].innerHTML = `${document.getElementsByTagName("p")[0].innerHTML}group${i} : ${tab} <br>`
-
-console.log(tab, "tableau group")
 }
 }
